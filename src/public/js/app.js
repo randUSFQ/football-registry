@@ -19,7 +19,7 @@ function showTab(tabName, event) {
     
     // Show selected tab
     document.getElementById(tabName).classList.add('active');
-    if (event && event.target) {
+    if (event && event.target && event.target.classList) {
         event.target.classList.add('active');
     }
     
