@@ -10,7 +10,9 @@ Clases principales:
 - Registro: Gestiona múltiples equipos y genera tablas de posiciones
 
 Ejemplo de uso:
-    from football_registry import Jugador, Equipo, Registro
+    from jugador import Jugador
+    from equipo import Equipo
+    from registro import Registro
     
     registro = Registro()
     equipo = Equipo("Barcelona", "Barcelona")
@@ -24,9 +26,15 @@ Ejemplo de uso:
     print(registro.mostrar_tabla_posiciones())
 """
 
-from jugador import Jugador
-from equipo import Equipo
-from registro import Registro
+try:
+    from .jugador import Jugador
+    from .equipo import Equipo
+    from .registro import Registro
+except ImportError:
+    # Fallback for direct execution
+    from jugador import Jugador
+    from equipo import Equipo
+    from registro import Registro
 
 __version__ = "1.0.0"
 __author__ = "USFQ"
