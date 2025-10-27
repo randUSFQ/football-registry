@@ -6,7 +6,7 @@ let teams = [];
 let tournaments = [];
 
 // Tab management
-function showTab(tabName) {
+function showTab(tabName, event) {
     // Hide all tabs
     document.querySelectorAll('.tab-content').forEach(tab => {
         tab.classList.remove('active');
@@ -19,7 +19,9 @@ function showTab(tabName) {
     
     // Show selected tab
     document.getElementById(tabName).classList.add('active');
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
     
     // Load data for the tab
     if (tabName === 'players') {
